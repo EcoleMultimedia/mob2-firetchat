@@ -4,12 +4,16 @@
 <div class="well">
   <!-- Un message : -->
   <div ng-repeat="message in tchat.messagesList track by $index">
-    <b>{{message.from}} dit:</b> {{message.text}}
+    <span style="cursor: pointer;margin-right: 5px;" class="glyphicon glyphicon-remove btn-supp" ng-click="tchat.remove(message)" ng-show="userData.id == message.idUser"></span><b>{{message.from}} dit:</b> {{message.text}}
   </div>
 </div>
 
 <!-- Formulaire d'envoi -->
-<form novalidate class="form-inline" ng-submit="tchat.sendMessage()">
-  <input type="text" class="form-control" placeholder="Votre message ici..." ng-model="tchat.messageText">
-  <input type="submit" class="btn btn-primary" value="Go">
+<form novalidate ng-submit="tchat.sendMessage()">
+	<div class="input-group">
+	<input type="text" class="form-control" ng-model="tchat.messageText" placeholder="Votre message ici...">
+		<span class="input-group-btn">
+			<input type="submit" class="btn btn-primary pull-right" value="Envoyer">
+		</span>
+	</div>
 </form>
