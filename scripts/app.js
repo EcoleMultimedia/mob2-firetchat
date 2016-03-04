@@ -26,7 +26,7 @@ angular
       })
 
   })
-  .run(function($rootScope, $state, AuthFactory, $timeout) {
+  .run(function($rootScope, $state, AuthFactory, $timeout, $http) {
 
     $rootScope.userData = null;
 
