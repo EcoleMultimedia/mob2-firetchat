@@ -7,6 +7,7 @@ angular
 
     tchat.sendMessage = function() {
       tchat.messagesList.$add({
+        picture: $rootScope.userData.profileImageURL,
         from: $rootScope.userData.displayName,
         text: tchat.messageText
       });

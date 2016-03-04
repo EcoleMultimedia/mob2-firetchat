@@ -4,7 +4,7 @@
 <div class="well">
   <!-- Un message : -->
   <div ng-repeat="message in tchat.messagesList track by $index">
-    <b>{{message.from}} dit:</b> {{message.text}}
+    <b><img id="photo" ng-src="{{message.picture}}"/> {{message.from}} dit:</b> {{message.text}}
   </div>
 </div>
 
