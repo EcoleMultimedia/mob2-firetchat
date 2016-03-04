@@ -7,9 +7,17 @@ angular
 
     tchat.sendMessage = function() {
       tchat.messagesList.$add({
+        idUser: $rootScope.userData.id,
         from: $rootScope.userData.displayName,
         text: tchat.messageText
       });
       tchat.messageText = '';
+    }
+
+    tchat.remove = function(item) {
+      if($rootScope.userData.id === item.idUser && confirm("Veux-tu vraiment supprimer ton message ?")) {
+        console.log("Message supprimé : ", item);
+        tchat.messagesList.$remove(item);
+      }
     }
   })
