@@ -9,7 +9,11 @@
 </div>
 
 <!-- Formulaire d'envoi -->
-<form novalidate class="form-inline" ng-submit="tchat.sendMessage()">
-  <input type="text" class="form-control" placeholder="Votre message ici..." ng-model="tchat.messageText">
-  <input type="submit" class="btn btn-primary" value="Go">
+<form novalidate ng-submit="tchat.sendMessage()">
+	<div class="input-group">
+	<input type="text" class="form-control" ng-model="tchat.messageText" placeholder="Votre message ici...">
+		<span class="input-group-btn">
+			<input type="submit" class="btn btn-primary pull-right" value="Envoyer">
+		</span>
+	</div>
 </form>
