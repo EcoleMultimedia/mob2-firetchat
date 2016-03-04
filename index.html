@@ -6,14 +6,14 @@
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-  <style>body { padding: 20px; }</style>
+  <link rel="stylesheet" href="styles/app.css">
 </head>
 <body>
 
 <div class="container logout" ng-show="userData">
   <div class="row">
     <div class="text-right">
-      Connecté sous <b>{{userData.displayName}}</b>
+      Connecté sous <b>{{userData.displayName}}  <img id="photo" ng-src="{{userData.profileImageURL}}"/></b>
       <input type="button" class="btn btn-danger" value="Deconnexion" ng-click="logout()">
     </div>
   </div><!-- .row -->
